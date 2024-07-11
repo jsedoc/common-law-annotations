@@ -1,0 +1,198 @@
+roject-template-in-the-ui-7c75285105fb#.py7towsdx --><!-- HIT template: SurveyLink-v3.0 --><!-- The following snippet enables the 'responsive' behavior on smaller screens -->
+<meta content="width=device-width,initial-scale=1" name="viewport" />
+<link
+  crossorigin="anonymous"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+  integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+  rel="stylesheet"
+/>
+<section class="container">
+  <!-- Dropdown Menu for navigation -->
+  <div class="dropdown fixed-top">
+    <button
+      class="btn btn-secondary dropdown-toggle"
+      type="button"
+      id="dropdownMenuButton"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      Navigation
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#instructions">Instructions</a>
+      <a class="dropdown-item" href="#specific-def">Specific Definitions</a>
+      <a class="dropdown-item" href="#q0">Question 1</a>
+      <a class="dropdown-item" href="#q1">Question 2</a>
+      <a class="dropdown-item" href="#q2">Question 3</a>
+      <a class="dropdown-item" href="#q3">Question 4</a>
+      <a class="dropdown-item" href="#q4">Question 5</a>
+      <a class="dropdown-item" href="#q5">Question 6</a>
+      <a class="dropdown-item" href="#q6">Question 7</a>
+      <a class="dropdown-item" href="#q7">Question 8</a>
+      <a class="dropdown-item" href="#q8">Question 9</a>
+      <a class="dropdown-item" href="#q9">Question 10</a>
+      <a class="dropdown-item" href="#q10">Question 11</a>
+    </div>
+  </div>
+
+  <div class="row jumbotron" id="collapseTrigger">
+    <div class="col-xs-12 col-md-12">
+      <div class="panel panel-primary">
+        <h4 id="instructions">Instructions</h4>
+        <hr />
+        <div class="panel-body" id="instructions">
+          <b style="color: blue"
+            >NOTE: THERE ARE A MAXIMUM OF 5 HITs YOU CAN COMPLETE. COMPLETING
+            ALL 5 HITs WILL GIVE YOU A BONUS! WE ENCOURAGE YOU TO DO ALL 5
+            HITs</b
+          >
+          <br />
+          <p>
+            The annotation task is to label responses to a given prompt. The
+            prompt consists of two people (A and B) talking to each other. The
+            response is the next utterance after the final utterance in the
+            prompt. The three base annotation criteria are:
+          </p>
+          <ol>
+            <li>
+              <strong>Appropriateness</strong>: The degree to which the output
+              is appropriate in the given context/situation.
+            </li>
+            <li>
+              <strong>Information content of outputs</strong>: The amount of
+              information conveyed by an output.
+            </li>
+            <li>
+              <strong>Human-likeness</strong>: The degree to which an output
+              could have been produced by a human.
+            </li>
+          </ol>
+          Each criteria is annotated on a 5-point scale where
+          <strong>1</strong> is worst and <strong>5</strong> is best.
+
+          <h4 id="specific-def">Specific Definitions</h4>
+          <hr />
+          <div class="panel-body" id="specific-def">
+            <em
+              >Laurel: Ben let out the cats this morning but one of them didn't
+              come back into the house <br />Dara: oh no, was it Tom?
+            </em>
+            <br />
+            <b>Appropriateness:</b>
+            <ol>
+              <li>
+                Completely irrelevant and non-topical response <br /><em
+                  >Laurel: Did you get dinner?</em
+                >
+              </li>
+
+              <li>
+                Response is on topic, but not appropriate<br /><em
+                  >Laurel: Cats are cute</em
+                >
+              </li>
+
+              <li>
+                Half of response is appropriate, half is not<br /><em
+                  >Laurel: Thankfully, it wasn’t Tom, but I want some
+                  hotdogs</em
+                >
+              </li>
+
+              <li>
+                Response is mostly appropriate, albeit slightly awkward<br /><em
+                  >Laurel: Jerry</em
+                >
+              </li>
+
+              <li>
+                Response is<br /><em
+                  >Laurel: No, it was Jerry ... He's always crawling under the
+                  house.</em
+                >
+              </li>
+            </ol>
+            <b>Information content of output</b>
+            <ol>
+              <li>
+                Repetition of something said in the prompt<br /><em
+                  >Laurel: The cats were let out by Ben
+                </em>
+              </li>
+
+              <li>
+                A generic answer or a question<br /><em
+                  >Laurel: Maybe<br />
+                </em>
+                <em>Laurel: Do you like cats?</em>
+              </li>
+
+              <li>
+                One type of information conveyed (information about self or the
+                world)<br /><em>Laurel: No, it was Jerry.</em><br /><em
+                  >Laurel: Cats often run away.</em
+                >
+              </li>
+
+              <li>
+                Both types of information conveyed (information about self and
+                the world)<br /><em>Laurel: No Jerry:( I am really worried.</em>
+              </li>
+
+              <li>
+                3 or more distinct pieces of information conveyed.<br /><em
+                  >Laurel: No it is Jerry. I'm really worried. 90% of cats that
+                  aren't found within 5 hours are roadkill.</em
+                >
+              </li>
+            </ol>
+            <b>Humanlikeness</b>
+            <em
+              >The extent to which the response BY ITSELF (ignore context) could
+              have been written by a person</em
+            >
+
+            <ol>
+              <li>
+                Self-contradictory or ungrammatical<br /><em
+                  >Laurel: Yes it's Jerry. But Jerry is Tom.</em
+                >
+              </li>
+
+              <li>
+                Incorrect obvious facts about the world<br /><em
+                  >Laurel: Jerry is mostly a cat name as in Tom and Jerry</em
+                >
+              </li>
+
+              <li>
+                Too long or unnatural sounding (lack of conversationalist
+                properties)<br /><em
+                  >Laurel: Jerry got lost then he might have gone under the
+                  house just like I drew in my drawing. Maybe this was all a
+                  dream
+                </em>
+              </li>
+
+              <li>
+                Close but not right almost like a non-native English speaker<br /><em
+                  >Laurel: Jerry ran away ... Sad feelings.</em
+                >
+              </li>
+
+              <li>
+                Perfectly fluent. You could imagine yourself saying this.<br /><em
+                  >Laurel: Unfortunately both Jerry and Tom that ran away. I'm
+                  not sure what to do.</em
+                >
+              </li>
+            </ol>
+          </div>
+          <!-- End of block -->
+        </div>
+      </div>
+    </div>
+    <!-- End Instructions --><!-- Survey Link Layout -->
+  </div>
+</section>

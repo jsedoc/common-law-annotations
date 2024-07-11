@@ -1,0 +1,201 @@
+roject-template-in-the-ui-7c75285105fb#.py7towsdx --><!-- HIT template: SurveyLink-v3.0 --><!-- The following snippet enables the 'responsive' behavior on smaller screens -->
+<meta content="width=device-width,initial-scale=1" name="viewport" />
+<link
+  crossorigin="anonymous"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+  integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+  rel="stylesheet"
+/>
+<section class="container">
+  <!-- Dropdown Menu for navigation -->
+  <div class="dropdown fixed-top">
+    <button
+      class="btn btn-secondary dropdown-toggle"
+      type="button"
+      id="dropdownMenuButton"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      Navigation
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#instructions">Instructions</a>
+      <a class="dropdown-item" href="#specific-def">Specific Definitions</a>
+      <a class="dropdown-item" href="#q0">Question 1</a>
+      <a class="dropdown-item" href="#q1">Question 2</a>
+      <a class="dropdown-item" href="#q2">Question 3</a>
+      <a class="dropdown-item" href="#q3">Question 4</a>
+      <a class="dropdown-item" href="#q4">Question 5</a>
+      <a class="dropdown-item" href="#q5">Question 6</a>
+      <a class="dropdown-item" href="#q6">Question 7</a>
+      <a class="dropdown-item" href="#q7">Question 8</a>
+      <a class="dropdown-item" href="#q8">Question 9</a>
+      <a class="dropdown-item" href="#q9">Question 10</a>
+      <a class="dropdown-item" href="#q10">Question 11</a>
+    </div>
+  </div>
+
+  <div class="row jumbotron" id="collapseTrigger">
+    <div class="col-xs-12 col-md-12">
+      <div class="panel panel-primary">
+        <h4 id="instructions">Instructions</h4>
+        <hr />
+        <div class="panel-body" id="instructions">
+          <b style="color: blue"
+            >NOTE: THERE ARE A MAXIMUM OF 5 HITs YOU CAN COMPLETE. COMPLETING
+            ALL 5 HITs WILL GIVE YOU A BONUS! WE ENCOURAGE YOU TO DO ALL 5
+            HITs</b
+          >
+          <br />
+          <p>
+            The annotation task is to label responses to a given prompt. The
+            prompt consists of two people (A and B) talking to each other. The
+            response is the next utterance after the final utterance in the
+            prompt. The three base annotation criteria are:
+          </p>
+          <ol>
+            <li>
+              <strong>Appropriateness</strong>: The degree to which the output
+              is appropriate in the given context/situation.
+            </li>
+            <li>
+              <strong>Information content of outputs</strong>: The amount of
+              information conveyed by an output.
+            </li>
+            <li>
+              <strong>Human-likeness</strong>: The degree to which an output
+              could have been produced by a human.
+            </li>
+          </ol>
+          Each criteria is annotated on a 5-point scale where
+          <strong>1</strong> is worst and <strong>5</strong> is best.
+          <h4 id="specific-def">Specific Definitions</h4>
+          <hr />
+          <div class="panel-body" id="specific-def">
+            <b>Appropriateness:</b><br />
+            <ol>
+              <li>“this had nothing to do with the conversation whatsoever”</li>
+              <li>“huh, wait, that’s very weird”</li>
+              <ul>
+                <li>
+                  Response has at least a mild relevance to the topic discussed
+                  in prompt but otherwise is a very unusual sentence
+                </li>
+              </ul>
+
+              <li>“that’s absurd but lets move on”</li>
+              <ul>
+                <li>
+                  An unusual sentence given topic-prompt or sentence
+                  construction but people would just ignore it if someone said
+                  that - because its not THAT weird
+                </li>
+              </ul>
+
+              <li>“Hm. I guess that makes sense”</li>
+              <ul>
+                <li>
+                  Follows logically from the prompt; typical response given the
+                  context in the prompt. Sort of what was expected.
+                </li>
+              </ul>
+
+              <li>“That helped the conversation”</li>
+              <ul>
+                <li>
+                  This adds new and relevant information to the conversation.
+                  This is going above and beyond in the right direction for this
+                  conversation.
+                </li>
+              </ul>
+            </ol>
+
+            <b>Information Content:</b><br />
+            <ol>
+              <li>
+                Hard to infer anything about the conversation. Very generic.
+              </li>
+              <ul>
+                <li>Example: “okay”.</li>
+              </ul>
+              <li>I know one thing that this conversations is about</li>
+              <ul>
+                <li>Example: “Yeah I’ve been there”</li>
+                <li>
+                  You know they are talking about a place which counts as 1
+                  thing
+                </li>
+              </ul>
+              <li>I know 2 things. Longer sentence.</li>
+              <ul>
+                <li>
+                  Example: “Yeah I’ve been there. I thought it was quite nice
+                  actually”
+                </li>
+              </ul>
+              <li>Multiple sentences with with 3 or more things.</li>
+              <ul>
+                <li>
+                  Example:“Yeah I’ve been there. I thought it was quite nice. My
+                  mom liked it too.”
+                </li>
+              </ul>
+              <li>
+                A long informative sentence (~>10 words) with LOTS to add in
+                terms of specific.
+              </li>
+              <ul>
+                <li>
+                  Example: “The thing I like about the Taj Mahal is that it is
+                  all one block or marble [...]”
+                </li>
+              </ul>
+            </ol>
+
+            <b>Human-likeness:</b><br />
+            <ol>
+              <li>Impossible for a human to say in any context</li>
+              <ul>
+                <li>Gibberish: “trhaiotjhoiath ^^ blah_cat”</li>
+              </ul>
+
+              <li>Correct words but very wrong</li>
+              <ul>
+                <li>grammar or word order “Go blue stuff very, I said?”</li>
+              </ul>
+
+              <li>
+                some beginner ESL person could say this, i guess
+                <ul>
+                  <li>ESL: “Very nice that thing is”</li>
+                </ul>
+              </li>
+
+              <li>
+                Someone would only say this in a weirdly specific situation
+              </li>
+              <ul>
+                <li>“It would have been nice if they had dunked it”</li>
+              </ul>
+
+              <ul>
+                <li>
+                  Technical language: “compile down your source code into binary
+                  bits via the JVM”
+                </li>
+              </ul>
+
+              <li>
+                literally me or my circle would legitimately say this “Yeah i
+                get you”
+              </li>
+            </ol>
+          </div>
+          <!-- End of block -->
+        </div>
+      </div>
+    </div>
+    <!-- End Instructions --><!-- Survey Link Layout -->
+  </div>
+</section>

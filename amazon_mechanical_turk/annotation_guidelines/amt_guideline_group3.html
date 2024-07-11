@@ -1,0 +1,114 @@
+<!-- For help on using this template, see the blog post: https://blog.mturk.com/editing-the-survey-link-project-template-in-the-ui-7c75285105fb#.py7towsdx --><!-- HIT template: SurveyLink-v3.0 --><!-- The following snippet enables the 'responsive' behavior on smaller screens -->
+<meta content="width=device-width,initial-scale=1" name="viewport" />
+<link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" rel="stylesheet" />
+<section class="container">
+   <!-- Dropdown Menu for navigation -->
+   <div class="dropdown fixed-top">
+    <button
+      class="btn btn-secondary dropdown-toggle"
+      type="button"
+      id="dropdownMenuButton"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      Navigation
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#instructions">Instructions</a>
+      <a class="dropdown-item" href="#specific-def">Specific Definitions</a>
+      <a class="dropdown-item" href="#q0">Question 1</a>
+      <a class="dropdown-item" href="#q1">Question 2</a>
+      <a class="dropdown-item" href="#q2">Question 3</a>
+      <a class="dropdown-item" href="#q3">Question 4</a>
+      <a class="dropdown-item" href="#q4">Question 5</a>
+      <a class="dropdown-item" href="#q5">Question 6</a>
+      <a class="dropdown-item" href="#q6">Question 7</a>
+      <a class="dropdown-item" href="#q7">Question 8</a>
+      <a class="dropdown-item" href="#q8">Question 9</a>
+      <a class="dropdown-item" href="#q9">Question 10</a>
+      <a class="dropdown-item" href="#q10">Question 11</a>
+    </div>
+  </div>
+  <div class="row jumbotron" id="collapseTrigger">
+    <div class="col-xs-12 col-md-12">
+      <div class="panel panel-primary">
+
+        <h4>Instructions</h4>
+        <hr/>
+        <div class="panel-body" id="instructions">
+         
+          <b style="color: blue"
+            >NOTE: THERE ARE A MAXIMUM OF 5 HITs YOU CAN COMPLETE. COMPLETING
+            ALL 5 HITs WILL GIVE YOU A BONUS! WE ENCOURAGE YOU TO DO ALL 5
+            HITs</b
+
+          <p> The annotation task is to label responses to a given prompt. The prompt consists of two people (A and B) talking to each other. The response is the next utterance after the final utterance in the prompt. The three base annotation criteria are:
+            <ol>
+              <li><strong>Appropriateness</strong>: The degree to which the output is appropriate in the given context/situation.</li>
+              <li><strong>Information content of outputs</strong>: The amount of information conveyed by an output.</li>
+              <li><strong>Human-likeness</strong>: The degree to which an output could have been produced by a human.</li>
+            </ol>
+                        
+            Each criteria is annotated on a 5-point scale where <strong>1</strong> is worst and <strong>5</strong> is best.</p>
+
+        <h4>Specific Definitions</h4>
+        <hr/>
+        <div class="panel-body" id="specific-def">
+          <h6>Appropriateness:</h6>
+          Lower score:
+          <ul>
+            <li>Confusing response, off-topic</li>
+            <li>Offensive, aggressive</li>
+            <li>Condtradiction</li>
+          </ul>
+
+          Higher score:
+          <ul>
+            <li>Empathetic, compassionate responses</li>
+            <li>Apt responses, matching emotional toll of the situation</li>
+          </ul>
+          
+          <h6>Information Content:</h6>
+          Lower score:
+          <ul>
+            <li>Contradiction</li>
+            <li>Off-topic</li>
+            <li>Repetition</li>
+            <li>Standalone response doesn't make sense</li>
+          </ul>
+
+          Higher score:
+          <ul>
+            <li>
+              Reasoning, could be indicated by joint statements/multiple clauses
+            </li>
+          </ul>          
+
+          <h6>Humanlikeness</h6>
+          Lower score:
+          <ul>
+            <li>Extensive repetition</li>
+            <li>Contradiction</li>
+            <li>Off-topic</li>
+            <li>Generic responses ("I am sorry to hear that", "How can i help you?"</li>
+          </ul>
+
+          Higher score:
+          <ul>
+            <li>Appropriate emojis </li>
+            <li>First person pronouns (“I”, “We”)</li>
+            <li>Referring to familial relationships</li>
+            <li>Colloquial language (“wanna”, etc.)</li>
+            <li>Contractions (“I’m”, “aren’t”, etc.)</li>
+            <li>Discuss of emotions (“I feel” statements for example) </li>
+            <li>Expression of surprise (“oh!”, etc.)</li>
+          </ul>
+</p>
+</dd>
+</dl>
+</div> <!-- End of block -->
+</div>
+</div>
+</div>
+<!-- End Instructions --><!-- Survey Link Layout -->

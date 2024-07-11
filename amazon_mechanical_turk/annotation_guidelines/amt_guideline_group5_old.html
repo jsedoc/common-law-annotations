@@ -1,0 +1,240 @@
+
+<meta content="width=device-width,initial-scale=1" name="viewport" />
+<link
+  crossorigin="anonymous"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+  integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+  rel="stylesheet"
+/>
+<section class="container">
+  <!-- Dropdown Menu for navigation -->
+  <div class="dropdown fixed-top">
+    <button
+      class="btn btn-secondary dropdown-toggle"
+      type="button"
+      id="dropdownMenuButton"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      Navigation
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#instructions">Instructions</a>
+      <a class="dropdown-item" href="#specific-def">Specific Definitions</a>
+      <a class="dropdown-item" href="#q0">Question 1</a>
+      <a class="dropdown-item" href="#q1">Question 2</a>
+      <a class="dropdown-item" href="#q2">Question 3</a>
+      <a class="dropdown-item" href="#q3">Question 4</a>
+      <a class="dropdown-item" href="#q4">Question 5</a>
+      <a class="dropdown-item" href="#q5">Question 6</a>
+      <a class="dropdown-item" href="#q6">Question 7</a>
+      <a class="dropdown-item" href="#q7">Question 8</a>
+      <a class="dropdown-item" href="#q8">Question 9</a>
+      <a class="dropdown-item" href="#q9">Question 10</a>
+      <a class="dropdown-item" href="#q10">Question 11</a>
+    </div>
+  </div>
+
+  <div class="row jumbotron" id="collapseTrigger">
+    <div class="col-xs-12 col-md-12">
+      <div class="panel panel-primary">
+        <h4 id="instructions">Instructions</h4>
+        <hr />
+        <div class="panel-body" id="instructions">
+          <b style="color: red">UPDATED</b>
+          <br />
+          <b style="color: blue"
+            >NOTE: THERE ARE A MAXIMUM OF 5 HITs YOU CAN COMPLETE. COMPLETING
+            ALL 5 HITs WILL GIVE YOU A BONUS! WE ENCOURAGE YOU TO DO ALL 5
+            HITs</b
+          >
+          <br />
+          <p>
+            The annotation task is to label responses to a given prompt. The
+            prompt consists of two people (A and B) talking to each other. The
+            response is the next utterance after the final utterance in the
+            prompt. The three base annotation criteria are:
+          </p>
+          <ol>
+            <li>
+              <strong>Appropriateness</strong>: The degree to which the output
+              is appropriate in the given context/situation.
+            </li>
+            <li>
+              <strong>Information content of outputs</strong>: The amount of
+              information conveyed by an output.
+            </li>
+            <li>
+              <strong>Human-likeness</strong>: The degree to which an output
+              could have been produced by a human.
+            </li>
+          </ol>
+          Each criteria is annotated on a 5-point scale where
+          <strong>1</strong> is worst and <strong>5</strong> is best.
+          <h4 id="specific-def">Specific Definitions</h4>
+          <hr />
+          <div class="panel-body" id="specific-def">
+            <em>Tips:</em>
+            <ul>
+              <li>
+                Do <b>not</b> consider the humanlikeness of the response when
+                judging its appropriateness. If the response fits the context,
+                but sounds weird, mark it as highly appropriate.
+              </li>
+              <li>
+                Do <b>not</b> consider the appropriateness of the response when
+                judging its humanlikeness. Humanlikeness should depend only on
+                the response itself, ignoring the context.
+              </li>
+            </ul>
+            <table class="table">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Appropriateness</th>
+                <th scope="col">Information content of output</th>
+                <th scope="col">Humanlikeness</th>
+              </tr>
+              <tr>
+                <td scope="row"></td>
+                <td>Does the response fit the context well?</td>
+                <td>Is the response specific or generic?</td>
+                <td>Could a human have said this response?</td>
+              </tr>
+              <tr>
+                <td scope="row">1</td>
+                <td>
+                  The response is completely irrelevant. It does not match or
+                  reference the context at all.
+                </td>
+                <td>
+                  The response could follow almost any statement or context, for
+                  example “How so?” or “Yeah”.
+                </td>
+                <td>
+                  The response is garbled text or nonsensical. It has no
+                  reasonable interpretation. For example, “He green a”.
+                </td>
+              </tr>
+              <tr>
+                <td scope="row">2</td>
+                <td>
+                  The response matches or references the context, but is highly
+                  unexpected. For example, it might contradict a previous
+                  statement, repeat word-for-word something already said, or
+                  respond to an earlier part of the conversation.
+                </td>
+                <td>
+                  The response could follow a large category of statements, but
+                  not any statement, for example, “Why not?” or “I’m down for
+                  that.”
+                </td>
+                <td>
+                  The response has some well-formed parts that you can
+                  interpret, but it’s completely unbelievable that the response
+                  came from a human. For example, “It’s just north of here
+                  UUUU.”
+                </td>
+              </tr>
+              <tr>
+                <td scope="row">3</td>
+                <td>
+                  The response has at least one interpretation that makes sense
+                  in the conversation; however, the interpretation is a stretch
+                  or strange given the context.
+                </td>
+                <td>
+                  The response talks about something generic in a vague way, for
+                  example: “Yeah, I love that.” or “It really is great.”
+                </td>
+                <td>
+                  The response is well-formed, but doesn’t seem realistic,
+                  sounds like a poorly written fictional person, or
+                  over-explains. For example, “I am sleepy because it’s night
+                  time, so now I will nap in my bed.”
+                </td>
+              </tr>
+              <tr>
+                <td scope="row">4</td>
+                <td>
+                  The first interpretation of the response makes sense in the
+                  conversation; however, it’s a bit strange, awkward, or
+                  unexpected.
+                </td>
+                <td>
+                  The response talks about something specific to the
+                  conversation in a vague way, for example: “Park street is
+                  great.”
+                </td>
+                <td>
+                  The response is mostly believable as coming from a person, but
+                  seems a bit strange. For example, the response is unreasonably
+                  polite.
+                </td>
+              </tr>
+              <tr>
+                <td scope="row">5</td>
+                <td>The response perfectly fits the conversation.</td>
+                <td>
+                  The response is highly specific to the conversation. It
+                  discusses something from the conversation in a specific way,
+                  for example “I really miss them, now that they’re gone.”
+                </td>
+                <td>
+                  The response is perfectly believable as coming from a human.
+                  You would not be surprised at all if a person had actually
+                  said it.
+                </td>
+              </tr>
+            </table>
+            <h4>Examples:</h4>
+            <table class="table">
+              <tr>
+                <th scope="col">Prompt</th>
+                <th scope="col">Response</th>
+                <th scope="col">Appropriateness</th>
+                <th scope="col">Information content of output</th>
+                <th scope="col">Humanlikeness</th>
+              </tr>
+              <tr>
+                <td>
+                  A: This floor is falling apart.<br />
+                  B: How can you tell?<br />
+                  A: Are you kidding me? Step over here.
+                </td>
+                <td>That's what I was thinking.</td>
+                <td>1</td>
+                <td>2</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>
+                  A: The prices on fruit have really gone up this year!<br />
+                  B: Yes, they have. It's ridiculous!<br />
+                  A: The fruit is not of good quality, either.
+                </td>
+                <td>I've also noticed the drop in quality.</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>
+                  A: I'm making the food for the party tomorrow.<br />
+                  B: I heard you are a fantastic cook!<br />
+                  A: Thank you! I do my best.
+                </td>
+                <td>I'm sure you do !</td>
+                <td>4</td>
+                <td>2</td>
+                <td>4</td>
+              </tr>
+            </table>
+          </div>
+          <!-- End of block -->
+        </div>
+      </div>
+    </div>
+    <!-- End Instructions --><!-- Survey Link Layout -->
+  </div>
+</section>

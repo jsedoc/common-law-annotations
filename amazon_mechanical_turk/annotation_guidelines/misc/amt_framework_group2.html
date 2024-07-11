@@ -1,0 +1,2225 @@
+<!-- For help on using this template, see the blog post: https://blog.mturk.com/editing-the-survey-link-project-template-in-the-ui-7c75285105fb#.py7towsdx --><!-- HIT template: SurveyLink-v3.0 --><!-- The following snippet enables the 'responsive' behavior on smaller screens -->
+<meta content="width=device-width,initial-scale=1" name="viewport" />
+<link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" rel="stylesheet" />
+<section class="container">
+  <div class="row jumbotron" id="collapseTrigger">
+    <div class="col-xs-12 col-md-12">
+      <div class="panel panel-primary">
+
+        <h4>Instructions</h4>
+        <hr/>
+        <div class="panel-body" id="instructionBody">
+         
+          <p> The annotation task is to label chatbot responses to prompts, using three annotation criteria:
+
+            <ol>
+              <li><strong>Appropriateness</strong>: The degree to which the output is appropriate in the given context/situation.</li>
+              <li><strong>Information content of outputs</strong>: The amount of information conveyed by an output.</li>
+              <li><strong>Human-likeness</strong>: The degree to which an output could have been produced by a human.</li>
+            </ol>
+                        
+            Each criteria is annotated on a 5-point scale where <strong>1</strong> is worst and <strong>5</strong> is best.</p>
+
+        <h4>Specific Definitions</h4>
+        <hr/>
+        <div class="panel-body" id="instructionBody">
+          <h5>Information content of output, Appropriateness:</h5>
+          <b>Appropriateness</b>: 1<br>
+          <b>Information content of output</b>: 1<br>
+          If the response doesn’t make sense, doesn’t relate to the previous conversation, doesn’t have some new information 
+          <br>
+          <br>
+          <b>Appropriateness</b>: 1<br>
+          <b>Information content of output</b>: 2<br>
+            If the response doesn’t make sense, doesn’t relate to the previous conversation, has some new information 
+          <br>
+          <br>
+          <b>Appropriateness</b>: 2<br>
+          <b>Information content of output</b>: 1<br>
+          If the response doesn’t make sense, but still relates to the previous conversation, doesn’t have new information 
+          <br>
+          <br>
+          <b>Appropriateness</b>: 4<br>
+          <b>Information content of output</b>: 3<br>
+            If the response does make sense, but still relate to the previous conversation, doesn’t have new information 
+          <br>
+          <br>
+          <b>Appropriateness</b>: 5<br>
+          <b>Information content of output</b>: 5<br>
+            If the response does make sense, but still relate to the previous conversation, has some new information
+          <br>
+          <br>
+          <b>Appropriateness</b>: 4<br>
+          <b>Information content of output</b>: 3<br>
+          If the response does make sense, not quite appropriate, has new information
+          <br>
+          <br>
+          <b>Appropriateness</b>: 4<br>
+          <b>Information content of output</b>: 4<br>
+            If the response does make sense, not as appropriate, has new information
+          <br>
+          <br>
+          
+          <h5>Humanlikeness</h5>
+          <b>Humanlikeness</b>: 1<br>
+          If the response doesn’t make sense, doesn’t relate to the previous conversation, repeat previous information,  
+          <br>
+          <br>
+          <b>Humanlikeness</b>: 1<br>
+          If the response doesn’t make sense, doesn’t relate to the previous conversation, doesn't repeat previous information,  
+          <br>
+          <br>
+          <b>Humanlikeness</b>: 2<br>
+          If the response doesn’t make sense, but still relates to the previous conversation, repeats previous information,  
+          <br>
+          <br>
+          <b>Humanlikeness</b>: 2<br>
+          If the response doesn’t make sense, but still relates to the previous conversation, doesn’t repeat previous information, 
+          <br>
+          <br>
+          <b>Humanlikeness</b>: 1<br>
+            If the response does make sense, doesn’t relate to the previous conversation, repeats previous information, 
+          <br>
+          <br>
+          <b>Humanlikeness</b>: 1<br>
+            If the response does make sense, doesn’t relate to the previous conversation, doesn’t repeat previous information, 
+          <br>
+          <br>
+          <b>Humanlikeness</b>: 3<br>
+          If the response does make sense, but still relates to the previous conversation, repeats previous information,
+          <br>
+          <br>
+          <b>Humanlikeness</b>: 4<br>
+          If the response does make sense, relates to the previous conversation, and paraphrases previous information
+          <br>
+          <br>
+          <b>Humanlikeness</b>: 5<br>
+          If the response does make sense, still relates to the previous conversation, doesn’t repeat previous information,
+          <br>
+          <br>
+          
+          
+</p>
+</dd>
+</dl>
+</div> <!-- End of block -->
+</div>
+</div>
+</div>
+<!-- End Instructions --><!-- Survey Link Layout -->
+<!-- BEGIN PROMPT - RESPONSE -->
+<!-- The Prompt & Response HTML to be appeneded to the final framework -->
+
+<div class="row">
+  <div class="col-md-6">
+    <input name="0_amt_idx" type="hidden" value="${0_amt_idx}" />
+    <h3 id="q0">Question 1</h3>
+    <h4>Prompt</h4>
+    <div
+      class="card card-block"
+      style="
+        margin-bottom: 1em;
+        font-size: 0.9em;
+        text-align: justify;
+        text-justify: inter-word;
+      "
+    >
+      ${0_prompt}
+    </div>
+  </div>
+  <!-- End of chat history column -->
+
+  <div class="col-md-6 h-scroll">
+    <h4>Response</h4>
+    <section class="card card-block">
+      <div
+        class="card card-block"
+        style="
+          margin-bottom: 1em;
+          text-align: justify;
+          text-justify: inter-word;
+        "
+      >
+        ${0_response}
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label">Appropriateness</label>
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="0_appropriateness-1"
+              id="0_appropriateness-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="0_appropriateness-2"
+              id="0_appropriateness-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="0_appropriateness-3"
+              id="0_appropriateness-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="0_appropriateness-4"
+              id="0_appropriateness-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="0_appropriateness-5"
+              id="0_appropriateness-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label"
+          >Information content of outputs</label
+        >
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="0_info-content-1"
+              id="0_info-content-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="0_info-content-2"
+              id="0_info-content-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="0_info-content-3"
+              id="0_info-content-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="0_info-content-4"
+              id="0_info-content-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="0_info-content-5"
+              id="0_info-content-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label">Humanlikeness</label>
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="0_humanlikeness-1"
+              id="0_humanlikeness-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="0_humanlikeness-2"
+              id="0_humanlikeness-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="0_humanlikeness-3"
+              id="0_humanlikeness-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="0_humanlikeness-4"
+              id="0_humanlikeness-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="0_humanlikeness-5"
+              id="0_humanlikeness-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- End of form column -->
+</div>
+<!-- End of form row -->
+
+<!-- The Prompt & Response HTML to be appeneded to the final framework -->
+
+<div class="row">
+  <div class="col-md-6">
+    <input name="1_amt_idx" type="hidden" value="${1_amt_idx}" />
+    <h3 id="q1">Question 2</h3>
+    <h4>Prompt</h4>
+    <div
+      class="card card-block"
+      style="
+        margin-bottom: 1em;
+        font-size: 0.9em;
+        text-align: justify;
+        text-justify: inter-word;
+      "
+    >
+      ${1_prompt}
+    </div>
+  </div>
+  <!-- End of chat history column -->
+
+  <div class="col-md-6 h-scroll">
+    <h4>Response</h4>
+    <section class="card card-block">
+      <div
+        class="card card-block"
+        style="
+          margin-bottom: 1em;
+          text-align: justify;
+          text-justify: inter-word;
+        "
+      >
+        ${1_response}
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label">Appropriateness</label>
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="1_appropriateness-1"
+              id="1_appropriateness-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="1_appropriateness-2"
+              id="1_appropriateness-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="1_appropriateness-3"
+              id="1_appropriateness-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="1_appropriateness-4"
+              id="1_appropriateness-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="1_appropriateness-5"
+              id="1_appropriateness-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label"
+          >Information content of outputs</label
+        >
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="1_info-content-1"
+              id="1_info-content-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="1_info-content-2"
+              id="1_info-content-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="1_info-content-3"
+              id="1_info-content-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="1_info-content-4"
+              id="1_info-content-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="1_info-content-5"
+              id="1_info-content-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label">Humanlikeness</label>
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="1_humanlikeness-1"
+              id="1_humanlikeness-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="1_humanlikeness-2"
+              id="1_humanlikeness-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="1_humanlikeness-3"
+              id="1_humanlikeness-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="1_humanlikeness-4"
+              id="1_humanlikeness-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="1_humanlikeness-5"
+              id="1_humanlikeness-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- End of form column -->
+</div>
+<!-- End of form row -->
+
+<!-- The Prompt & Response HTML to be appeneded to the final framework -->
+
+<div class="row">
+  <div class="col-md-6">
+    <input name="2_amt_idx" type="hidden" value="${2_amt_idx}" />
+    <h3 id="q2">Question 3</h3>
+    <h4>Prompt</h4>
+    <div
+      class="card card-block"
+      style="
+        margin-bottom: 1em;
+        font-size: 0.9em;
+        text-align: justify;
+        text-justify: inter-word;
+      "
+    >
+      ${2_prompt}
+    </div>
+  </div>
+  <!-- End of chat history column -->
+
+  <div class="col-md-6 h-scroll">
+    <h4>Response</h4>
+    <section class="card card-block">
+      <div
+        class="card card-block"
+        style="
+          margin-bottom: 1em;
+          text-align: justify;
+          text-justify: inter-word;
+        "
+      >
+        ${2_response}
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label">Appropriateness</label>
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="2_appropriateness-1"
+              id="2_appropriateness-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="2_appropriateness-2"
+              id="2_appropriateness-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="2_appropriateness-3"
+              id="2_appropriateness-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="2_appropriateness-4"
+              id="2_appropriateness-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="2_appropriateness-5"
+              id="2_appropriateness-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label"
+          >Information content of outputs</label
+        >
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="2_info-content-1"
+              id="2_info-content-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="2_info-content-2"
+              id="2_info-content-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="2_info-content-3"
+              id="2_info-content-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="2_info-content-4"
+              id="2_info-content-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="2_info-content-5"
+              id="2_info-content-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label">Humanlikeness</label>
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="2_humanlikeness-1"
+              id="2_humanlikeness-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="2_humanlikeness-2"
+              id="2_humanlikeness-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="2_humanlikeness-3"
+              id="2_humanlikeness-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="2_humanlikeness-4"
+              id="2_humanlikeness-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="2_humanlikeness-5"
+              id="2_humanlikeness-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- End of form column -->
+</div>
+<!-- End of form row -->
+
+<!-- The Prompt & Response HTML to be appeneded to the final framework -->
+
+<div class="row">
+  <div class="col-md-6">
+    <input name="3_amt_idx" type="hidden" value="${3_amt_idx}" />
+    <h3 id="q3">Question 4</h3>
+    <h4>Prompt</h4>
+    <div
+      class="card card-block"
+      style="
+        margin-bottom: 1em;
+        font-size: 0.9em;
+        text-align: justify;
+        text-justify: inter-word;
+      "
+    >
+      ${3_prompt}
+    </div>
+  </div>
+  <!-- End of chat history column -->
+
+  <div class="col-md-6 h-scroll">
+    <h4>Response</h4>
+    <section class="card card-block">
+      <div
+        class="card card-block"
+        style="
+          margin-bottom: 1em;
+          text-align: justify;
+          text-justify: inter-word;
+        "
+      >
+        ${3_response}
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label">Appropriateness</label>
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="3_appropriateness-1"
+              id="3_appropriateness-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="3_appropriateness-2"
+              id="3_appropriateness-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="3_appropriateness-3"
+              id="3_appropriateness-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="3_appropriateness-4"
+              id="3_appropriateness-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="3_appropriateness-5"
+              id="3_appropriateness-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label"
+          >Information content of outputs</label
+        >
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="3_info-content-1"
+              id="3_info-content-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="3_info-content-2"
+              id="3_info-content-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="3_info-content-3"
+              id="3_info-content-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="3_info-content-4"
+              id="3_info-content-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="3_info-content-5"
+              id="3_info-content-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label">Humanlikeness</label>
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="3_humanlikeness-1"
+              id="3_humanlikeness-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="3_humanlikeness-2"
+              id="3_humanlikeness-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="3_humanlikeness-3"
+              id="3_humanlikeness-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="3_humanlikeness-4"
+              id="3_humanlikeness-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="3_humanlikeness-5"
+              id="3_humanlikeness-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- End of form column -->
+</div>
+<!-- End of form row -->
+
+<!-- The Prompt & Response HTML to be appeneded to the final framework -->
+
+<div class="row">
+  <div class="col-md-6">
+    <input name="4_amt_idx" type="hidden" value="${4_amt_idx}" />
+    <h3 id="q4">Question 5</h3>
+    <h4>Prompt</h4>
+    <div
+      class="card card-block"
+      style="
+        margin-bottom: 1em;
+        font-size: 0.9em;
+        text-align: justify;
+        text-justify: inter-word;
+      "
+    >
+      ${4_prompt}
+    </div>
+  </div>
+  <!-- End of chat history column -->
+
+  <div class="col-md-6 h-scroll">
+    <h4>Response</h4>
+    <section class="card card-block">
+      <div
+        class="card card-block"
+        style="
+          margin-bottom: 1em;
+          text-align: justify;
+          text-justify: inter-word;
+        "
+      >
+        ${4_response}
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label">Appropriateness</label>
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="4_appropriateness-1"
+              id="4_appropriateness-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="4_appropriateness-2"
+              id="4_appropriateness-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="4_appropriateness-3"
+              id="4_appropriateness-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="4_appropriateness-4"
+              id="4_appropriateness-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="4_appropriateness-5"
+              id="4_appropriateness-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label"
+          >Information content of outputs</label
+        >
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="4_info-content-1"
+              id="4_info-content-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="4_info-content-2"
+              id="4_info-content-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="4_info-content-3"
+              id="4_info-content-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="4_info-content-4"
+              id="4_info-content-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="4_info-content-5"
+              id="4_info-content-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label">Humanlikeness</label>
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="4_humanlikeness-1"
+              id="4_humanlikeness-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="4_humanlikeness-2"
+              id="4_humanlikeness-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="4_humanlikeness-3"
+              id="4_humanlikeness-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="4_humanlikeness-4"
+              id="4_humanlikeness-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="4_humanlikeness-5"
+              id="4_humanlikeness-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- End of form column -->
+</div>
+<!-- End of form row -->
+
+<!-- The Prompt & Response HTML to be appeneded to the final framework -->
+
+<div class="row">
+  <div class="col-md-6">
+    <input name="5_amt_idx" type="hidden" value="${5_amt_idx}" />
+    <h3 id="q5">Question 6</h3>
+    <h4>Prompt</h4>
+    <div
+      class="card card-block"
+      style="
+        margin-bottom: 1em;
+        font-size: 0.9em;
+        text-align: justify;
+        text-justify: inter-word;
+      "
+    >
+      ${5_prompt}
+    </div>
+  </div>
+  <!-- End of chat history column -->
+
+  <div class="col-md-6 h-scroll">
+    <h4>Response</h4>
+    <section class="card card-block">
+      <div
+        class="card card-block"
+        style="
+          margin-bottom: 1em;
+          text-align: justify;
+          text-justify: inter-word;
+        "
+      >
+        ${5_response}
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label">Appropriateness</label>
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="5_appropriateness-1"
+              id="5_appropriateness-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="5_appropriateness-2"
+              id="5_appropriateness-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="5_appropriateness-3"
+              id="5_appropriateness-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="5_appropriateness-4"
+              id="5_appropriateness-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="5_appropriateness-5"
+              id="5_appropriateness-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label"
+          >Information content of outputs</label
+        >
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="5_info-content-1"
+              id="5_info-content-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="5_info-content-2"
+              id="5_info-content-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="5_info-content-3"
+              id="5_info-content-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="5_info-content-4"
+              id="5_info-content-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="5_info-content-5"
+              id="5_info-content-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label">Humanlikeness</label>
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="5_humanlikeness-1"
+              id="5_humanlikeness-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="5_humanlikeness-2"
+              id="5_humanlikeness-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="5_humanlikeness-3"
+              id="5_humanlikeness-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="5_humanlikeness-4"
+              id="5_humanlikeness-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="5_humanlikeness-5"
+              id="5_humanlikeness-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- End of form column -->
+</div>
+<!-- End of form row -->
+
+<!-- The Prompt & Response HTML to be appeneded to the final framework -->
+
+<div class="row">
+  <div class="col-md-6">
+    <input name="6_amt_idx" type="hidden" value="${6_amt_idx}" />
+    <h3 id="q6">Question 7</h3>
+    <h4>Prompt</h4>
+    <div
+      class="card card-block"
+      style="
+        margin-bottom: 1em;
+        font-size: 0.9em;
+        text-align: justify;
+        text-justify: inter-word;
+      "
+    >
+      ${6_prompt}
+    </div>
+  </div>
+  <!-- End of chat history column -->
+
+  <div class="col-md-6 h-scroll">
+    <h4>Response</h4>
+    <section class="card card-block">
+      <div
+        class="card card-block"
+        style="
+          margin-bottom: 1em;
+          text-align: justify;
+          text-justify: inter-word;
+        "
+      >
+        ${6_response}
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label">Appropriateness</label>
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="6_appropriateness-1"
+              id="6_appropriateness-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="6_appropriateness-2"
+              id="6_appropriateness-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="6_appropriateness-3"
+              id="6_appropriateness-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="6_appropriateness-4"
+              id="6_appropriateness-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="6_appropriateness-5"
+              id="6_appropriateness-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label"
+          >Information content of outputs</label
+        >
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="6_info-content-1"
+              id="6_info-content-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="6_info-content-2"
+              id="6_info-content-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="6_info-content-3"
+              id="6_info-content-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="6_info-content-4"
+              id="6_info-content-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="6_info-content-5"
+              id="6_info-content-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label">Humanlikeness</label>
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="6_humanlikeness-1"
+              id="6_humanlikeness-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="6_humanlikeness-2"
+              id="6_humanlikeness-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="6_humanlikeness-3"
+              id="6_humanlikeness-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="6_humanlikeness-4"
+              id="6_humanlikeness-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="6_humanlikeness-5"
+              id="6_humanlikeness-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- End of form column -->
+</div>
+<!-- End of form row -->
+
+<!-- The Prompt & Response HTML to be appeneded to the final framework -->
+
+<div class="row">
+  <div class="col-md-6">
+    <input name="attention_check_amt_idx" type="hidden" value="${attention_check_amt_idx}" />
+    <h3 id="q7">Question 8</h3>
+    <h4>Prompt</h4>
+    <div
+      class="card card-block"
+      style="
+        margin-bottom: 1em;
+        font-size: 0.9em;
+        text-align: justify;
+        text-justify: inter-word;
+      "
+    >
+      ${attention_check_prompt}
+    </div>
+  </div>
+  <!-- End of chat history column -->
+
+  <div class="col-md-6 h-scroll">
+    <h4>Response</h4>
+    <section class="card card-block">
+      <div
+        class="card card-block"
+        style="
+          margin-bottom: 1em;
+          text-align: justify;
+          text-justify: inter-word;
+        "
+      >
+        ${attention_check_response}
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label">Appropriateness</label>
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="attention_check_appropriateness-1"
+              id="attention_check_appropriateness-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="attention_check_appropriateness-2"
+              id="attention_check_appropriateness-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="attention_check_appropriateness-3"
+              id="attention_check_appropriateness-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="attention_check_appropriateness-4"
+              id="attention_check_appropriateness-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="attention_check_appropriateness-5"
+              id="attention_check_appropriateness-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label"
+          >Information content of outputs</label
+        >
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="attention_check_info-content-1"
+              id="attention_check_info-content-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="attention_check_info-content-2"
+              id="attention_check_info-content-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="attention_check_info-content-3"
+              id="attention_check_info-content-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="attention_check_info-content-4"
+              id="attention_check_info-content-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="attention_check_info-content-5"
+              id="attention_check_info-content-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label">Humanlikeness</label>
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="attention_check_humanlikeness-1"
+              id="attention_check_humanlikeness-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="attention_check_humanlikeness-2"
+              id="attention_check_humanlikeness-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="attention_check_humanlikeness-3"
+              id="attention_check_humanlikeness-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="attention_check_humanlikeness-4"
+              id="attention_check_humanlikeness-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="attention_check_humanlikeness-5"
+              id="attention_check_humanlikeness-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- End of form column -->
+</div>
+<!-- End of form row -->
+
+<!-- The Prompt & Response HTML to be appeneded to the final framework -->
+
+<div class="row">
+  <div class="col-md-6">
+    <input name="8_amt_idx" type="hidden" value="${8_amt_idx}" />
+    <h3 id="q8">Question 9</h3>
+    <h4>Prompt</h4>
+    <div
+      class="card card-block"
+      style="
+        margin-bottom: 1em;
+        font-size: 0.9em;
+        text-align: justify;
+        text-justify: inter-word;
+      "
+    >
+      ${8_prompt}
+    </div>
+  </div>
+  <!-- End of chat history column -->
+
+  <div class="col-md-6 h-scroll">
+    <h4>Response</h4>
+    <section class="card card-block">
+      <div
+        class="card card-block"
+        style="
+          margin-bottom: 1em;
+          text-align: justify;
+          text-justify: inter-word;
+        "
+      >
+        ${8_response}
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label">Appropriateness</label>
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="8_appropriateness-1"
+              id="8_appropriateness-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="8_appropriateness-2"
+              id="8_appropriateness-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="8_appropriateness-3"
+              id="8_appropriateness-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="8_appropriateness-4"
+              id="8_appropriateness-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="8_appropriateness-5"
+              id="8_appropriateness-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label"
+          >Information content of outputs</label
+        >
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="8_info-content-1"
+              id="8_info-content-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="8_info-content-2"
+              id="8_info-content-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="8_info-content-3"
+              id="8_info-content-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="8_info-content-4"
+              id="8_info-content-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="8_info-content-5"
+              id="8_info-content-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label">Humanlikeness</label>
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="8_humanlikeness-1"
+              id="8_humanlikeness-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="8_humanlikeness-2"
+              id="8_humanlikeness-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="8_humanlikeness-3"
+              id="8_humanlikeness-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="8_humanlikeness-4"
+              id="8_humanlikeness-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="8_humanlikeness-5"
+              id="8_humanlikeness-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- End of form column -->
+</div>
+<!-- End of form row -->
+
+<!-- The Prompt & Response HTML to be appeneded to the final framework -->
+
+<div class="row">
+  <div class="col-md-6">
+    <input name="9_amt_idx" type="hidden" value="${9_amt_idx}" />
+    <h3 id="q9">Question 10</h3>
+    <h4>Prompt</h4>
+    <div
+      class="card card-block"
+      style="
+        margin-bottom: 1em;
+        font-size: 0.9em;
+        text-align: justify;
+        text-justify: inter-word;
+      "
+    >
+      ${9_prompt}
+    </div>
+  </div>
+  <!-- End of chat history column -->
+
+  <div class="col-md-6 h-scroll">
+    <h4>Response</h4>
+    <section class="card card-block">
+      <div
+        class="card card-block"
+        style="
+          margin-bottom: 1em;
+          text-align: justify;
+          text-justify: inter-word;
+        "
+      >
+        ${9_response}
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label">Appropriateness</label>
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="9_appropriateness-1"
+              id="9_appropriateness-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="9_appropriateness-2"
+              id="9_appropriateness-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="9_appropriateness-3"
+              id="9_appropriateness-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="9_appropriateness-4"
+              id="9_appropriateness-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="9_appropriateness-5"
+              id="9_appropriateness-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label"
+          >Information content of outputs</label
+        >
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="9_info-content-1"
+              id="9_info-content-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="9_info-content-2"
+              id="9_info-content-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="9_info-content-3"
+              id="9_info-content-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="9_info-content-4"
+              id="9_info-content-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="9_info-content-5"
+              id="9_info-content-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-12 col-form-label">Humanlikeness</label>
+        <div class="col-6 btn-group" data-toggle="buttons">
+          <label class="btn btn-outline-primary">
+            <input
+              name="9_humanlikeness-1"
+              id="9_humanlikeness-1"
+              type="radio"
+              value="1"
+              required
+            />
+            1
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="9_humanlikeness-2"
+              id="9_humanlikeness-2"
+              type="radio"
+              value="2"
+              required
+            />
+            2
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="9_humanlikeness-3"
+              id="9_humanlikeness-3"
+              type="radio"
+              value="3"
+              required
+            />
+            3
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="9_humanlikeness-4"
+              id="9_humanlikeness-4"
+              type="radio"
+              value="4"
+              required
+            />
+            4
+          </label>
+          <label class="btn btn-outline-primary">
+            <input
+              name="9_humanlikeness-5"
+              id="9_humanlikeness-5"
+              type="radio"
+              value="5"
+              required
+            />
+            5
+          </label>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- End of form column -->
+</div>
+<!-- End of form row -->
+
+
+
+    <!-- PASTED PROMPT_RESPONSE ROW x 10 ENDS HERE -->
+
+</div> <!-- End of form -->
+
+</section>
+<!-- Close internal style sheet --><!-- External JS references --><script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+<style>
+  .h-scroll {
+      height: 800px; /* %-height of the viewport */
+      overflow-y: scroll;
+  }
+</style>
